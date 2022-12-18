@@ -8,15 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		10CF3EFB294F1EA100425992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFA294F1EA100425992 /* AppDelegate.swift */; };
-		10CF3EFD294F1EA100425992 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFC294F1EA100425992 /* SceneDelegate.swift */; };
-		10CF3EFF294F1EA100425992 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFE294F1EA100425992 /* ViewController.swift */; };
-		10CF3F02294F1EA100425992 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F00294F1EA100425992 /* Main.storyboard */; };
+		10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFE294F1EA100425992 /* ProductsViewController.swift */; };
+		10CF3F02294F1EA100425992 /* ProductsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F00294F1EA100425992 /* ProductsStoryboard.storyboard */; };
 		10CF3F05294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3F03294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodeld */; };
 		10CF3F07294F1EA300425992 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F06294F1EA300425992 /* Assets.xcassets */; };
 		10CF3F0A294F1EA300425992 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F08294F1EA300425992 /* LaunchScreen.storyboard */; };
 		10CF3F15294F1EA400425992 /* Challenge_ThirdwayvTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3F14294F1EA400425992 /* Challenge_ThirdwayvTests.swift */; };
 		10CF3F1F294F1EA400425992 /* Challenge_ThirdwayvUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3F1E294F1EA400425992 /* Challenge_ThirdwayvUITests.swift */; };
 		10CF3F21294F1EA400425992 /* Challenge_ThirdwayvUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3F20294F1EA400425992 /* Challenge_ThirdwayvUITestsLaunchTests.swift */; };
+		10CF3F36294F2C5600425992 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3F35294F2C5600425992 /* ProductDetailViewController.swift */; };
+		10CF3F38294F2C7200425992 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3F37294F2C7200425992 /* Constants.swift */; };
+		10F3902F294F36D10055E533 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F3902E294F36D10055E533 /* CoordinatorProtocol.swift */; };
+		10F39031294F36E00055E533 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F39030294F36E00055E533 /* Coordinator.swift */; };
+		10F39034294F3B980055E533 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F39033294F3B980055E533 /* UIViewController+Storyboard.swift */; };
+		10F39036294F49490055E533 /* ProductDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F39035294F49490055E533 /* ProductDetailStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +44,23 @@
 /* Begin PBXFileReference section */
 		10CF3EF7294F1EA100425992 /* Challenge_Thirdwayv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge_Thirdwayv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CF3EFA294F1EA100425992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10CF3EFC294F1EA100425992 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		10CF3EFE294F1EA100425992 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		10CF3F01294F1EA100425992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		10CF3EFE294F1EA100425992 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		10CF3F01294F1EA100425992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProductsStoryboard.storyboard; sourceTree = "<group>"; };
 		10CF3F04294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Challenge_Thirdwayv.xcdatamodel; sourceTree = "<group>"; };
 		10CF3F06294F1EA300425992 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10CF3F09294F1EA300425992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		10CF3F0B294F1EA300425992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10CF3F0B294F1EA300425992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Challenge_Thirdwayv/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
 		10CF3F10294F1EA400425992 /* Challenge_ThirdwayvTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Challenge_ThirdwayvTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CF3F14294F1EA400425992 /* Challenge_ThirdwayvTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_ThirdwayvTests.swift; sourceTree = "<group>"; };
 		10CF3F1A294F1EA400425992 /* Challenge_ThirdwayvUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Challenge_ThirdwayvUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CF3F1E294F1EA400425992 /* Challenge_ThirdwayvUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_ThirdwayvUITests.swift; sourceTree = "<group>"; };
 		10CF3F20294F1EA400425992 /* Challenge_ThirdwayvUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_ThirdwayvUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10CF3F35294F2C5600425992 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		10CF3F37294F2C7200425992 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		10F3902E294F36D10055E533 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		10F39030294F36E00055E533 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		10F39033294F3B980055E533 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
+		10F39035294F49490055E533 /* ProductDetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetailStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +111,10 @@
 		10CF3EF9294F1EA100425992 /* Challenge_Thirdwayv */ = {
 			isa = PBXGroup;
 			children = (
-				10CF3EFA294F1EA100425992 /* AppDelegate.swift */,
-				10CF3EFC294F1EA100425992 /* SceneDelegate.swift */,
-				10CF3EFE294F1EA100425992 /* ViewController.swift */,
-				10CF3F00294F1EA100425992 /* Main.storyboard */,
-				10CF3F06294F1EA300425992 /* Assets.xcassets */,
-				10CF3F08294F1EA300425992 /* LaunchScreen.storyboard */,
-				10CF3F0B294F1EA300425992 /* Info.plist */,
+				10CF3F2D294F2A2700425992 /* Application */,
+				10F39032294F3B6E0055E533 /* Extensions */,
+				10CF3F2F294F2A4A00425992 /* Modules */,
+				10CF3F2E294F2A4300425992 /* Resources */,
 				10CF3F03294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodeld */,
 			);
 			path = Challenge_Thirdwayv;
@@ -128,6 +135,94 @@
 				10CF3F20294F1EA400425992 /* Challenge_ThirdwayvUITestsLaunchTests.swift */,
 			);
 			path = Challenge_ThirdwayvUITests;
+			sourceTree = "<group>";
+		};
+		10CF3F2D294F2A2700425992 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				10CF3F32294F2BB100425992 /* Architecture */,
+				10CF3F33294F2BB900425992 /* Coordinator */,
+				10CF3F34294F2BC600425992 /* Delegate */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		10CF3F2E294F2A4300425992 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				10CF3F39294F2C7900425992 /* UI */,
+				10CF3F0B294F1EA300425992 /* Info.plist */,
+				10CF3F06294F1EA300425992 /* Assets.xcassets */,
+				10CF3F37294F2C7200425992 /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		10CF3F2F294F2A4A00425992 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				10CF3F31294F2A8800425992 /* Product Detail */,
+				10CF3F30294F2A6A00425992 /* Products */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		10CF3F30294F2A6A00425992 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10CF3F00294F1EA100425992 /* ProductsStoryboard.storyboard */,
+				10CF3EFE294F1EA100425992 /* ProductsViewController.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		10CF3F31294F2A8800425992 /* Product Detail */ = {
+			isa = PBXGroup;
+			children = (
+				10CF3F35294F2C5600425992 /* ProductDetailViewController.swift */,
+				10F39035294F49490055E533 /* ProductDetailStoryboard.storyboard */,
+			);
+			path = "Product Detail";
+			sourceTree = "<group>";
+		};
+		10CF3F32294F2BB100425992 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		10CF3F33294F2BB900425992 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				10F3902E294F36D10055E533 /* CoordinatorProtocol.swift */,
+				10F39030294F36E00055E533 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		10CF3F34294F2BC600425992 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				10CF3EFA294F1EA100425992 /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		10CF3F39294F2C7900425992 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				10CF3F08294F1EA300425992 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		10F39032294F3B6E0055E533 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10F39033294F3B980055E533 /* UIViewController+Storyboard.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +331,8 @@
 			files = (
 				10CF3F0A294F1EA300425992 /* LaunchScreen.storyboard in Resources */,
 				10CF3F07294F1EA300425992 /* Assets.xcassets in Resources */,
-				10CF3F02294F1EA100425992 /* Main.storyboard in Resources */,
+				10CF3F02294F1EA100425992 /* ProductsStoryboard.storyboard in Resources */,
+				10F39036294F49490055E533 /* ProductDetailStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +357,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F39031294F36E00055E533 /* Coordinator.swift in Sources */,
+				10F3902F294F36D10055E533 /* CoordinatorProtocol.swift in Sources */,
 				10CF3F05294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodeld in Sources */,
-				10CF3EFF294F1EA100425992 /* ViewController.swift in Sources */,
+				10F39034294F3B980055E533 /* UIViewController+Storyboard.swift in Sources */,
+				10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */,
+				10CF3F36294F2C5600425992 /* ProductDetailViewController.swift in Sources */,
 				10CF3EFB294F1EA100425992 /* AppDelegate.swift in Sources */,
-				10CF3EFD294F1EA100425992 /* SceneDelegate.swift in Sources */,
+				10CF3F38294F2C7200425992 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +401,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		10CF3F00294F1EA100425992 /* Main.storyboard */ = {
+		10CF3F00294F1EA100425992 /* ProductsStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				10CF3F01294F1EA100425992 /* Base */,
 			);
-			name = Main.storyboard;
+			name = ProductsStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		10CF3F08294F1EA300425992 /* LaunchScreen.storyboard */ = {
@@ -443,10 +543,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9X99K7U59N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Challenge_Thirdwayv/Info.plist;
+				INFOPLIST_FILE = Challenge_Thirdwayv/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ProductsStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -473,10 +573,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9X99K7U59N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Challenge_Thirdwayv/Info.plist;
+				INFOPLIST_FILE = Challenge_Thirdwayv/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ProductsStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
