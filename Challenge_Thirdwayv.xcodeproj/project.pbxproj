@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10B6E642295076DA004C0CED /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E641295076DA004C0CED /* Reachability.swift */; };
 		10CF3EFB294F1EA100425992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFA294F1EA100425992 /* AppDelegate.swift */; };
 		10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFE294F1EA100425992 /* ProductsViewController.swift */; };
 		10CF3F02294F1EA100425992 /* ProductsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F00294F1EA100425992 /* ProductsStoryboard.storyboard */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10B6E641295076DA004C0CED /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		10CF3EF7294F1EA100425992 /* Challenge_Thirdwayv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge_Thirdwayv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CF3EFA294F1EA100425992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10CF3EFE294F1EA100425992 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				10F3905A294F99AD0055E533 /* NetworkResponse.swift */,
 				10F3905C294F99D70055E533 /* Request.swift */,
 				10F39060294FA3210055E533 /* Publisher.swift */,
+				10B6E641295076DA004C0CED /* Reachability.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				10F39052294F77FE0055E533 /* UseCase.swift in Sources */,
 				10F39059294F996F0055E533 /* APIClientType.swift in Sources */,
 				10F3903A294F51C20055E533 /* ProductsCoordinator.swift in Sources */,
+				10B6E642295076DA004C0CED /* Reachability.swift in Sources */,
 				10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */,
 				10CF3F36294F2C5600425992 /* ProductDetailViewController.swift in Sources */,
 				10F39038294F51B70055E533 /* ProductDetailCoordinator.swift in Sources */,
