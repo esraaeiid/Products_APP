@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Combine
 
-final class ImageLoader: ObservableObject {
+final class ImageLoader {
     @Published var image: UIImage? = nil
     @Published var isLoading: Bool = false
     var cancellables = Set<AnyCancellable>()

@@ -15,7 +15,7 @@ struct ProductsModel: Codable {
     
     
     // MARK: - Record
-    struct Record: Codable {
+    struct Record: Codable, Equatable {
         let id: Int?
         let productDescription: String?
         let image: Image?
@@ -23,7 +23,7 @@ struct ProductsModel: Codable {
     }
     
     // MARK: - Image
-    struct Image: Codable {
+    struct Image: Codable, Equatable {
         let width, height: Int?
         let url: String?
         let data: String?
