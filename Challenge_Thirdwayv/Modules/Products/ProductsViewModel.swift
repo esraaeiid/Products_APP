@@ -22,12 +22,13 @@ enum ProductsViewModelState {
 class ProductsViewModel: BaseViewModel {
     
     //MARK: Vars
-    
     /// immutable `stateDidUpdate` property so that subscriber can only read from it.
     private(set) lazy var stateDidUpdate = stateDidUpdateSubject.eraseToAnyPublisher()
 
     private var cancellables: [AnyCancellable] = []
     private let stateDidUpdateSubject = PassthroughSubject<ProductsViewModelState, Never>()
+    var products: [ProductsModel.Record] = []
+
     
     //MARK: Init
     init(useCase: ProductsUseCaseType) {
@@ -36,6 +37,7 @@ class ProductsViewModel: BaseViewModel {
     
 }
 
+//MARK: - Request
 
 extension ProductsViewModel: ProductsViewModelType {
     
@@ -52,13 +54,31 @@ extension ProductsViewModel: ProductsViewModelType {
                 switch result {
                 case .success(let products):
                     let productsRows: [ProductsModel.Record] = products.records ?? []
+                    self.products = productsRows
                     self.stateDidUpdateSubject.send(.show(productsRows))
                     
                 case .failure(let error):
                     self.stateDidUpdateSubject.send(.error(error.localizedDescription))
                 }
             }.store(in: &cancellables)
-        }
-    
-    
     }
+    
+    
+}
+
+
+//MARK: - Functions
+
+extension ProductsViewModel {
+    
+    func fetchProducts(){
+        
+    }
+    
+    
+    func fetchProduct(){
+        
+    }
+    
+    
+}

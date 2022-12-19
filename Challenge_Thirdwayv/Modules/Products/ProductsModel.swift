@@ -26,6 +26,7 @@ struct ProductsModel: Codable {
     struct Image: Codable {
         let width, height: Int?
         let url: String?
+        let data: String?
     }
     
     

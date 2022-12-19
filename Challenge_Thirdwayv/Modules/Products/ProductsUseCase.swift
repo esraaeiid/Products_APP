@@ -33,5 +33,8 @@ extension ProductsUseCase: ProductsUseCaseType {
     func request(_ request: Request) -> AnyPublisher<Result<ProductsModel, APIError>, Never> {
         return apiClient
             .execute(request)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
     }
 }
