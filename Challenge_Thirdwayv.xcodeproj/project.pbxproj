@@ -33,6 +33,10 @@
 		10F39052294F77FE0055E533 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F39051294F77FE0055E533 /* UseCase.swift */; };
 		10F39054294F784A0055E533 /* ProductDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F39053294F784A0055E533 /* ProductDetailUseCase.swift */; };
 		10F39056294F78590055E533 /* ProductsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F39055294F78590055E533 /* ProductsUseCase.swift */; };
+		10F39059294F996F0055E533 /* APIClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F39058294F996F0055E533 /* APIClientType.swift */; };
+		10F3905B294F99AD0055E533 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F3905A294F99AD0055E533 /* NetworkResponse.swift */; };
+		10F3905D294F99D70055E533 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F3905C294F99D70055E533 /* Request.swift */; };
+		10F39061294FA3210055E533 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F39060294FA3210055E533 /* Publisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,10 @@
 		10F39051294F77FE0055E533 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		10F39053294F784A0055E533 /* ProductDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailUseCase.swift; sourceTree = "<group>"; };
 		10F39055294F78590055E533 /* ProductsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsUseCase.swift; sourceTree = "<group>"; };
+		10F39058294F996F0055E533 /* APIClientType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientType.swift; sourceTree = "<group>"; };
+		10F3905A294F99AD0055E533 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		10F3905C294F99D70055E533 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		10F39060294FA3210055E533 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +170,7 @@
 		10CF3F2D294F2A2700425992 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				10F39057294F99400055E533 /* Networking */,
 				10CF3F32294F2BB100425992 /* Architecture */,
 				10CF3F33294F2BB900425992 /* Coordinator */,
 				10CF3F34294F2BC600425992 /* Delegate */,
@@ -256,6 +265,17 @@
 				10F39033294F3B980055E533 /* UIViewController+Storyboard.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		10F39057294F99400055E533 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				10F39058294F996F0055E533 /* APIClientType.swift */,
+				10F3905A294F99AD0055E533 /* NetworkResponse.swift */,
+				10F3905C294F99D70055E533 /* Request.swift */,
+				10F39060294FA3210055E533 /* Publisher.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +410,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F39061294FA3210055E533 /* Publisher.swift in Sources */,
+				10F3905D294F99D70055E533 /* Request.swift in Sources */,
+				10F3905B294F99AD0055E533 /* NetworkResponse.swift in Sources */,
 				10F39031294F36E00055E533 /* Coordinator.swift in Sources */,
 				10F3902F294F36D10055E533 /* CoordinatorProtocol.swift in Sources */,
 				10F39054294F784A0055E533 /* ProductDetailUseCase.swift in Sources */,
@@ -399,6 +422,7 @@
 				10F39046294F5CA40055E533 /* BaseViewModel.swift in Sources */,
 				10F39044294F5C8E0055E533 /* BaseViewController.swift in Sources */,
 				10F39052294F77FE0055E533 /* UseCase.swift in Sources */,
+				10F39059294F996F0055E533 /* APIClientType.swift in Sources */,
 				10F3903A294F51C20055E533 /* ProductsCoordinator.swift in Sources */,
 				10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */,
 				10CF3F36294F2C5600425992 /* ProductDetailViewController.swift in Sources */,

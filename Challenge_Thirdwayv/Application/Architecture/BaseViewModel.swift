@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 
 // MARK: - ...  Base ViewModel
@@ -17,8 +18,9 @@ class BaseViewModel: BaseViewModelProtocol{
     typealias U = UseCase
     
     var useCase: U?
-    var showError: Bool = false
-    var isLoading: Bool = false
+    @Published var showError: Bool = false
+    @Published var isLoading: Bool = false
+    
 
     init(useCase: U) {
         self.useCase = useCase

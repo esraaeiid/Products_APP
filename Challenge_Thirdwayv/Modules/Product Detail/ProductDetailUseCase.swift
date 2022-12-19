@@ -10,3 +10,5 @@ import Foundation
 class ProductDetailUseCase: UseCase {
     
 }
+
+
