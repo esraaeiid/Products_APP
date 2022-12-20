@@ -24,15 +24,28 @@
                                     <action selector="testBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EYc-38-iL5"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HMH-rP-H59">
+                                <rect key="frame" x="157" y="124" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.023529411760000001" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="SSG-a4-db6"/>
+                                    <constraint firstAttribute="width" constant="100" id="ZcP-Da-k79"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="HMH-rP-H59" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R6P-ZM-DES"/>
+                            <constraint firstItem="HMH-rP-H59" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="U9y-58-xJl"/>
                             <constraint firstItem="uMP-6W-mVN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pOI-F8-0bk"/>
                             <constraint firstItem="uMP-6W-mVN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tjE-X7-64l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Em-mH-9em"/>
+                    <connections>
+                        <outlet property="testImgView" destination="HMH-rP-H59" id="m3T-Ux-Kmt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

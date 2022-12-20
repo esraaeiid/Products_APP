@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10B6E642295076DA004C0CED /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E641295076DA004C0CED /* Reachability.swift */; };
+		10B6E64B2950B67E004C0CED /* PhotoCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E64A2950B67E004C0CED /* PhotoCacheManager.swift */; };
+		10B6E6512950BCC1004C0CED /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E6502950BCC1004C0CED /* ImageLoader.swift */; };
+		10B6E65D2950EE61004C0CED /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E65C2950EE61004C0CED /* ProductStore.swift */; };
 		10CF3EFB294F1EA100425992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFA294F1EA100425992 /* AppDelegate.swift */; };
 		10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFE294F1EA100425992 /* ProductsViewController.swift */; };
 		10CF3F02294F1EA100425992 /* ProductsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F00294F1EA100425992 /* ProductsStoryboard.storyboard */; };
-		10CF3F05294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3F03294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodeld */; };
 		10CF3F07294F1EA300425992 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F06294F1EA300425992 /* Assets.xcassets */; };
 		10CF3F0A294F1EA300425992 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F08294F1EA300425992 /* LaunchScreen.storyboard */; };
 		10CF3F15294F1EA400425992 /* Challenge_ThirdwayvTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3F14294F1EA400425992 /* Challenge_ThirdwayvTests.swift */; };
@@ -57,11 +60,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10B6E641295076DA004C0CED /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		10B6E64A2950B67E004C0CED /* PhotoCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCacheManager.swift; sourceTree = "<group>"; };
+		10B6E6502950BCC1004C0CED /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		10B6E65C2950EE61004C0CED /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
 		10CF3EF7294F1EA100425992 /* Challenge_Thirdwayv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge_Thirdwayv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CF3EFA294F1EA100425992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10CF3EFE294F1EA100425992 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		10CF3F01294F1EA100425992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProductsStoryboard.storyboard; sourceTree = "<group>"; };
-		10CF3F04294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Challenge_Thirdwayv.xcdatamodel; sourceTree = "<group>"; };
 		10CF3F06294F1EA300425992 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10CF3F09294F1EA300425992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10CF3F0B294F1EA300425992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Challenge_Thirdwayv/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -118,6 +124,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10B6E6452950A350004C0CED /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				10B6E65C2950EE61004C0CED /* ProductStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		10B6E6482950B608004C0CED /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				10B6E6452950A350004C0CED /* Store */,
+				10B6E6492950B661004C0CED /* ImageManager */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		10B6E6492950B661004C0CED /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				10B6E64A2950B67E004C0CED /* PhotoCacheManager.swift */,
+				10B6E6502950BCC1004C0CED /* ImageLoader.swift */,
+			);
+			path = ImageManager;
+			sourceTree = "<group>";
+		};
 		10CF3EEE294F1EA100425992 = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +177,6 @@
 				10F39032294F3B6E0055E533 /* Extensions */,
 				10CF3F2F294F2A4A00425992 /* Modules */,
 				10CF3F2E294F2A4300425992 /* Resources */,
-				10CF3F03294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodeld */,
 			);
 			path = Challenge_Thirdwayv;
 			sourceTree = "<group>";
@@ -170,6 +201,7 @@
 		10CF3F2D294F2A2700425992 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				10B6E6482950B608004C0CED /* Utilities */,
 				10F39057294F99400055E533 /* Networking */,
 				10CF3F32294F2BB100425992 /* Architecture */,
 				10CF3F33294F2BB900425992 /* Coordinator */,
@@ -274,6 +306,7 @@
 				10F3905A294F99AD0055E533 /* NetworkResponse.swift */,
 				10F3905C294F99D70055E533 /* Request.swift */,
 				10F39060294FA3210055E533 /* Publisher.swift */,
+				10B6E641295076DA004C0CED /* Reachability.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -417,13 +450,15 @@
 				10F3902F294F36D10055E533 /* CoordinatorProtocol.swift in Sources */,
 				10F39054294F784A0055E533 /* ProductDetailUseCase.swift in Sources */,
 				10F39042294F520F0055E533 /* ProductsViewModel.swift in Sources */,
-				10CF3F05294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodeld in Sources */,
 				10F39034294F3B980055E533 /* UIViewController+Storyboard.swift in Sources */,
 				10F39046294F5CA40055E533 /* BaseViewModel.swift in Sources */,
 				10F39044294F5C8E0055E533 /* BaseViewController.swift in Sources */,
 				10F39052294F77FE0055E533 /* UseCase.swift in Sources */,
+				10B6E6512950BCC1004C0CED /* ImageLoader.swift in Sources */,
 				10F39059294F996F0055E533 /* APIClientType.swift in Sources */,
+				10B6E64B2950B67E004C0CED /* PhotoCacheManager.swift in Sources */,
 				10F3903A294F51C20055E533 /* ProductsCoordinator.swift in Sources */,
+				10B6E642295076DA004C0CED /* Reachability.swift in Sources */,
 				10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */,
 				10CF3F36294F2C5600425992 /* ProductDetailViewController.swift in Sources */,
 				10F39038294F51B70055E533 /* ProductDetailCoordinator.swift in Sources */,
@@ -433,6 +468,7 @@
 				10F39056294F78590055E533 /* ProductsUseCase.swift in Sources */,
 				10F39040294F52010055E533 /* ProductsModel.swift in Sources */,
 				10F3903E294F51EB0055E533 /* ProductDetailViewModel.swift in Sources */,
+				10B6E65D2950EE61004C0CED /* ProductStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,19 +814,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		10CF3F03294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				10CF3F04294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodel */,
-			);
-			currentVersion = 10CF3F04294F1EA100425992 /* Challenge_Thirdwayv.xcdatamodel */;
-			path = Challenge_Thirdwayv.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 10CF3EEF294F1EA100425992 /* Project object */;
 }

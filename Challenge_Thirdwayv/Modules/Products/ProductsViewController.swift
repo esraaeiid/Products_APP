@@ -12,6 +12,10 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
     
     //MARK: Vars
     var coordinator: ProductsCoordinator?
+    var imageLoader: ImageLoader?
+    
+    @IBOutlet weak var testImgView: UIImageView!
+    
     
     //MARK: View LifeCycle Methods
     override func viewDidLoad() {
@@ -40,22 +44,51 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
     override func bind() {
         super.bind()
         viewModel?.$isLoading.sink{ isLoading in
-            print("...\(isLoading)")
+            print("...\(isLoading)...")
         }.store(in: &cancellable)
        
         viewModel?.stateDidUpdate.sink{ [weak self] state in
             guard let self = self else { return }
             self.render(state)
         }.store(in: &cancellable)
+        
+        
     }
     
     private func render(_ state: ProductsViewModelState){
         switch state {
         case .show(let products):
             print("products 😍", products)
+            self.testImage(product: products.first!)
+            
         case .error(let errorMessage):
             print("error 😭", errorMessage)
         }
+    }
+    
+    func testImage(product: ProductsModel.Record){
+        
+        if let url = product.image?.url, let productID = product.id {
+         imageLoader = ImageLoader(url: url,
+                                      productID: String(productID))
+        }
+
+        guard imageLoader != nil else {
+            return
+        }
+
+
+
+        imageLoader?.$image.sink { [weak self] img in
+            guard let self = self else { return }
+
+            if img != nil {
+                self.testImgView.image = img
+                self.imageLoader = nil
+            }
+
+        }.store(in: &cancellable)
+        
     }
     
 

@@ -19,6 +19,16 @@ protocol APIClientType{
     func execute<T>(_ request: Request) -> AnyPublisher<Result<T, APIError>, Never> where T: Decodable
 }
 
+extension APIClient {
+    func checkReachability() -> Bool {
+        if Reachability.isConnectedToNetwork() {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
 class APIClient: APIClientType{
     // MARK: - Function
     
@@ -29,6 +39,9 @@ class APIClient: APIClientType{
             return .just(.failure(.networkError))
         }
         
+        if !checkReachability() {
+           return  .just(.failure(.networkError))
+        }
         
         return URLSession.shared.dataTaskPublisher(for: request)
         .map(\.data)
