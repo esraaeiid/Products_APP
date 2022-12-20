@@ -10,6 +10,10 @@ import Foundation
 
 class ProductDetailViewModel: BaseViewModel {
     
+    //MARK: Vars
+//    @Published var product: ProductsModel.Record?
+    
+    //MARK: Init
     init(){
         let useCase = ProductDetailUseCase()
         super.init(useCase: useCase)

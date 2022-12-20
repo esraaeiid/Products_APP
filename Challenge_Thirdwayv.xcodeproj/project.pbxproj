@@ -12,6 +12,9 @@
 		10B6E6512950BCC1004C0CED /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E6502950BCC1004C0CED /* ImageLoader.swift */; };
 		10B6E65D2950EE61004C0CED /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E65C2950EE61004C0CED /* ProductStore.swift */; };
 		10B6E66029515030004C0CED /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E65F29515030004C0CED /* LoadingView.swift */; };
+		10B6E66429515117004C0CED /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E66229515117004C0CED /* ProductCell.swift */; };
+		10B6E66529515117004C0CED /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B6E66329515117004C0CED /* ProductCell.xib */; };
+		10B6E6672951A348004C0CED /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E6662951A348004C0CED /* UICollectionView+Extension.swift */; };
 		10CF3EFB294F1EA100425992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFA294F1EA100425992 /* AppDelegate.swift */; };
 		10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFE294F1EA100425992 /* ProductsViewController.swift */; };
 		10CF3F02294F1EA100425992 /* ProductsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F00294F1EA100425992 /* ProductsStoryboard.storyboard */; };
@@ -66,6 +69,9 @@
 		10B6E6502950BCC1004C0CED /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		10B6E65C2950EE61004C0CED /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
 		10B6E65F29515030004C0CED /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		10B6E66229515117004C0CED /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		10B6E66329515117004C0CED /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		10B6E6662951A348004C0CED /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		10CF3EF7294F1EA100425992 /* Challenge_Thirdwayv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge_Thirdwayv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CF3EFA294F1EA100425992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10CF3EFE294F1EA100425992 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +167,15 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
+		10B6E661295150ED004C0CED /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				10B6E66229515117004C0CED /* ProductCell.swift */,
+				10B6E66329515117004C0CED /* ProductCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		10CF3EEE294F1EA100425992 = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +259,7 @@
 		10CF3F30294F2A6A00425992 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				10B6E661295150ED004C0CED /* CollectionViewCell */,
 				10F39039294F51C20055E533 /* ProductsCoordinator.swift */,
 				10CF3F00294F1EA100425992 /* ProductsStoryboard.storyboard */,
 				10CF3EFE294F1EA100425992 /* ProductsViewController.swift */,
@@ -306,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				10F39033294F3B980055E533 /* UIViewController+Storyboard.swift */,
+				10B6E6662951A348004C0CED /* UICollectionView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,6 +445,7 @@
 			files = (
 				10CF3F0A294F1EA300425992 /* LaunchScreen.storyboard in Resources */,
 				10CF3F07294F1EA300425992 /* Assets.xcassets in Resources */,
+				10B6E66529515117004C0CED /* ProductCell.xib in Resources */,
 				10CF3F02294F1EA100425992 /* ProductsStoryboard.storyboard in Resources */,
 				10F39036294F49490055E533 /* ProductDetailStoryboard.storyboard in Resources */,
 			);
@@ -459,6 +477,7 @@
 				10F3905B294F99AD0055E533 /* NetworkResponse.swift in Sources */,
 				10F39031294F36E00055E533 /* Coordinator.swift in Sources */,
 				10F3902F294F36D10055E533 /* CoordinatorProtocol.swift in Sources */,
+				10B6E66429515117004C0CED /* ProductCell.swift in Sources */,
 				10F39054294F784A0055E533 /* ProductDetailUseCase.swift in Sources */,
 				10F39042294F520F0055E533 /* ProductsViewModel.swift in Sources */,
 				10F39034294F3B980055E533 /* UIViewController+Storyboard.swift in Sources */,
@@ -472,6 +491,7 @@
 				10F3903A294F51C20055E533 /* ProductsCoordinator.swift in Sources */,
 				10B6E642295076DA004C0CED /* Reachability.swift in Sources */,
 				10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */,
+				10B6E6672951A348004C0CED /* UICollectionView+Extension.swift in Sources */,
 				10CF3F36294F2C5600425992 /* ProductDetailViewController.swift in Sources */,
 				10F39038294F51B70055E533 /* ProductDetailCoordinator.swift in Sources */,
 				10CF3EFB294F1EA100425992 /* AppDelegate.swift in Sources */,

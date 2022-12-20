@@ -14,7 +14,7 @@ protocol ProductsViewModelType {
 
 /// define all states of view.
 enum ProductsViewModelState {
-    case show([ProductsModel.Record])
+    case show(Bool)
     case error(String)
 }
 
@@ -27,7 +27,7 @@ class ProductsViewModel: BaseViewModel {
 
     private var cancellables: [AnyCancellable] = []
     private let stateDidUpdateSubject = PassthroughSubject<ProductsViewModelState, Never>()
-    var products: [ProductsModel.Record] = []
+    @Published var products: [ProductsModel.Record] = []
     var store = ProductStore()
 
     
@@ -59,7 +59,7 @@ extension ProductsViewModel: ProductsViewModelType {
                     let productsRows: [ProductsModel.Record] = products.records ?? []
                     self.products = productsRows
                     self.cacheProducts(products: productsRows)
-                    self.stateDidUpdateSubject.send(.show(productsRows))
+                    self.stateDidUpdateSubject.send(.show(true))
                     
                 case .failure(let error):
                     self.syncCachedProducts()
@@ -106,14 +106,17 @@ extension ProductsViewModel {
     
     
     //MARK: fetching prodcuts
-    func fetchProducts(){
-        
+    func fetchProducts(index: Int) -> ProductsModel.Record? {
+        if products.indices.contains(index) {
+            return products[index]
+        }
+        return nil
+    }
+   
+    
+    func fetchProductCount() -> Int {
+        return products.count
     }
     
-    
-    func fetchProduct(){
-        
-    }
-    
-    
+
 }
