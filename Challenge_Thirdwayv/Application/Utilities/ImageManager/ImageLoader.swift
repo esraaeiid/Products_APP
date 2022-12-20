@@ -16,20 +16,23 @@ final class ImageLoader {
     let manager: PhotoCacheManager = PhotoCacheManager.shared
     let urlString: String
     let productID: String
-    
+
     init(url: String, productID: String) {
         self.urlString = url
         self.productID = productID
         getImage()
     }
-    
+
     private func getImage() {
-        if let savedImage = manager.get(key: productID) {
+        if let savedImage = manager.retrieveImage(forKey: productID) {
             image = savedImage
         } else {
             downloadImage()
         }
     }
+    
+    
+    
     
     private func downloadImage() {
         isLoading = true
@@ -44,9 +47,16 @@ final class ImageLoader {
             }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                self?.isLoading = false
+                guard let self = self else { return }
+                
+                self.isLoading = false
             } receiveValue: { [weak self] returnData in
-                self?.image = returnData
+                guard let self = self else { return }
+                
+                self.image = returnData
+                if let returnData = returnData {
+                    self.manager.store(image: returnData, forKey: self.productID)
+                }
             }
             .store(in: &cancellables)
     }

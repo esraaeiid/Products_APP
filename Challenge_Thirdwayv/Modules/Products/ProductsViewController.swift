@@ -51,6 +51,8 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
             guard let self = self else { return }
             self.render(state)
         }.store(in: &cancellable)
+        
+        
     }
     
     private func render(_ state: ProductsViewModelState){
@@ -65,21 +67,26 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
     }
     
     func testImage(product: ProductsModel.Record){
-         imageLoader = ImageLoader(url: product.image?.url ?? "",
-                                      productID: String(product.id ?? 0))
         
+        if let url = product.image?.url, let productID = product.id {
+         imageLoader = ImageLoader(url: url,
+                                      productID: String(productID))
+        }
+
         guard imageLoader != nil else {
             return
         }
 
+
+
         imageLoader?.$image.sink { [weak self] img in
             guard let self = self else { return }
-            
+
             if img != nil {
                 self.testImgView.image = img
                 self.imageLoader = nil
             }
-            
+
         }.store(in: &cancellable)
         
     }

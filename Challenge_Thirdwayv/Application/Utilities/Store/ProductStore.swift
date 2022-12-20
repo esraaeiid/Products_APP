@@ -22,6 +22,11 @@ final class ProductStore {
             .appendingPathComponent("products.json")
     }
     
+    //TODO: should delete old file if exist
+    static func delete(){
+        
+    }
+    
     static func load(completion: @escaping (Result<[ProductsModel.Record], Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {

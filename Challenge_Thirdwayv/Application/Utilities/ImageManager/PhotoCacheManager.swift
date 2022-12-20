@@ -10,22 +10,42 @@ import UIKit
 
 final class PhotoCacheManager {
     static let shared = PhotoCacheManager()
-    
+
     private init() { }
-    
-    var photoCache: NSCache<NSString, UIImage> = {
-       var cache = NSCache<NSString, UIImage>()
-        cache.countLimit = 200
-        cache.totalCostLimit = 1024 * 1024 * 200 // 200mb
-        return cache
-    }()
-    
-    func add(key: String, value: UIImage) {
-        photoCache.setObject(value, forKey: key as NSString)
+
+    private func filePath(forKey key: String) -> URL? {
+        let fileManager = FileManager.default
+        guard let documentURL = fileManager.urls(for: .documentDirectory,
+                                                in: FileManager.SearchPathDomainMask.userDomainMask).first else { return nil }
+        
+        return documentURL.appendingPathComponent(key + ".png")
+    }
+
+    func store(image: UIImage,
+                        forKey key: String) {
+        if let pngRepresentation = image.pngData() {
+         
+                if let filePath = filePath(forKey: key) {
+                    do  {
+                        try pngRepresentation.write(to: filePath,
+                                                    options: .atomic)
+                    } catch let err {
+                        print("Saving file resulted in error: ", err)
+                    }
+                }
+        }
     }
     
-    func get(key: String) -> UIImage? {
-        return photoCache.object(forKey: key as NSString)
+     func retrieveImage(forKey key: String) -> UIImage? {
+
+        if let filePath = self.filePath(forKey: key),
+           let fileData = FileManager.default.contents(atPath: filePath.path),
+           let image = UIImage(data: fileData) {
+            return image
+        }
+    
+        return nil
     }
+
     
 }
