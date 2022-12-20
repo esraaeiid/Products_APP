@@ -12,7 +12,12 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
     
     //MARK: Vars
     var coordinator: ProductsCoordinator?
-        
+    
+    private let transitionManager = TransitionManager(duration: 0.5)
+    
+    public var currentCell: ProductCell?
+    private var currentPage = 0
+    
     @IBOutlet weak var productsCollectionView: UICollectionView! {
         didSet {
             productsCollectionView.delegate = self
@@ -112,8 +117,12 @@ extension ProductsViewController : UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
-        if let product = self.viewModel?.fetchProduct(index: indexPath.row) {
-            coordinator?.navigateProductDetail(product)
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ProductCell else { return }
+        
+        if let product = self.viewModel?.fetchProduct(index: indexPath.row){
+            coordinator?.navigateProductDetail(product,
+                                               productImage: cell.productImageView.image,
+                                               transationDelegate: transitionManager)
         }
     }
         
@@ -125,6 +134,8 @@ extension ProductsViewController : UICollectionViewDelegateFlowLayout, UICollect
         if let product = self.viewModel?.fetchProduct(index: indexPath.row) {
             cell.bind(product)
         }
+        currentCell = cell
+        
         return cell
   
     }
@@ -157,3 +168,6 @@ extension ProductsViewController: PinterestLayoutDelegate {
         return 200
     }
 }
+
+
+

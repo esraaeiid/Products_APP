@@ -23,10 +23,13 @@ class ProductsCoordinator: Coordinator, CoordinatorProtocol {
 
 extension ProductsCoordinator {
     
-    func navigateProductDetail(_ product: ProductsModel.Record){
+    func navigateProductDetail(_ product: ProductsModel.Record,
+                               productImage: UIImage?,
+                               transationDelegate: TransitionManager?){
         guard let scene = UIViewController.instantiateInitialController(from: .productDetail) as? ProductDetailViewController else { return }
         scene.product = product
-        view?.navigationController?.pushViewController(scene, animated: true)
-        
+        scene.productImg = productImage
+        view?.navigationController?.delegate = transationDelegate
+        view?.navigationController?.pushViewController(scene, animated: true) 
     }
 }

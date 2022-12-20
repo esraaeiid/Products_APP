@@ -16,6 +16,8 @@
 		10B6E66529515117004C0CED /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B6E66329515117004C0CED /* ProductCell.xib */; };
 		10B6E6672951A348004C0CED /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E6662951A348004C0CED /* UICollectionView+Extension.swift */; };
 		10B6E66B2952316F004C0CED /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E66A2952316F004C0CED /* PinterestLayout.swift */; };
+		10B6E66E29525111004C0CED /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E66D29525111004C0CED /* TransitionManager.swift */; };
+		10B6E670295258C9004C0CED /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B6E66F295258C9004C0CED /* UIApplication+Extensions.swift */; };
 		10CF3EFB294F1EA100425992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFA294F1EA100425992 /* AppDelegate.swift */; };
 		10CF3EFF294F1EA100425992 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3EFE294F1EA100425992 /* ProductsViewController.swift */; };
 		10CF3F02294F1EA100425992 /* ProductsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3F00294F1EA100425992 /* ProductsStoryboard.storyboard */; };
@@ -74,6 +76,8 @@
 		10B6E66329515117004C0CED /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		10B6E6662951A348004C0CED /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		10B6E66A2952316F004C0CED /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		10B6E66D29525111004C0CED /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		10B6E66F295258C9004C0CED /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		10CF3EF7294F1EA100425992 /* Challenge_Thirdwayv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge_Thirdwayv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CF3EFA294F1EA100425992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10CF3EFE294F1EA100425992 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +198,14 @@
 			path = "Custom layout";
 			sourceTree = "<group>";
 		};
+		10B6E66C29525102004C0CED /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				10B6E66D29525111004C0CED /* TransitionManager.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
 		10CF3EEE294F1EA100425992 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +257,7 @@
 		10CF3F2D294F2A2700425992 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				10B6E66C29525102004C0CED /* Transitions */,
 				10B6E6682952314A004C0CED /* Theme */,
 				10B6E6482950B608004C0CED /* Utilities */,
 				10F39057294F99400055E533 /* Networking */,
@@ -342,6 +355,7 @@
 			children = (
 				10F39033294F3B980055E533 /* UIViewController+Storyboard.swift */,
 				10B6E6662951A348004C0CED /* UICollectionView+Extension.swift */,
+				10B6E66F295258C9004C0CED /* UIApplication+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -497,7 +511,9 @@
 				10F3905B294F99AD0055E533 /* NetworkResponse.swift in Sources */,
 				10F39031294F36E00055E533 /* Coordinator.swift in Sources */,
 				10F3902F294F36D10055E533 /* CoordinatorProtocol.swift in Sources */,
+				10B6E670295258C9004C0CED /* UIApplication+Extensions.swift in Sources */,
 				10B6E66429515117004C0CED /* ProductCell.swift in Sources */,
+				10B6E66E29525111004C0CED /* TransitionManager.swift in Sources */,
 				10F39054294F784A0055E533 /* ProductDetailUseCase.swift in Sources */,
 				10F39042294F520F0055E533 /* ProductsViewModel.swift in Sources */,
 				10F39034294F3B980055E533 /* UIViewController+Storyboard.swift in Sources */,

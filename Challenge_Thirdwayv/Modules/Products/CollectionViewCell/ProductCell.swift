@@ -16,7 +16,7 @@ class ProductCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
 
-    private var imageLoader: ImageLoader?
+     var imageLoader: ImageLoader?
     var cancellable: [AnyCancellable] = []
     
     override func awakeFromNib() {

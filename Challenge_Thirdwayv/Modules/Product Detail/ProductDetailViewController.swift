@@ -20,7 +20,7 @@ class ProductDetailViewController: BaseViewController<ProductDetailViewModel> {
     
     private var imageLoader: ImageLoader?
     var product: ProductsModel.Record?
-    
+    var productImg: UIImage?
     
     //MARK: View LifeCycle Methods
     override func viewDidLoad() {
@@ -34,55 +34,34 @@ class ProductDetailViewController: BaseViewController<ProductDetailViewModel> {
         viewModel = ProductDetailViewModel()
         coordinator = .init()
         coordinator?.view = self
-        
         bind()
+        updateView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         coordinator = nil
         viewModel = nil
-        
+        productImageView.image = nil
     }
     
     override func bind() {
         super.bind()
-        
-        ///Descripton
-        self.productDescriptionLabel.text = product?.productDescription
-        
-        ///Image
-        if let url = product?.image?.url, let productID = product?.id {
-            self.imageLoader = ImageLoader(url: url,
-                                           productID: String(productID))
-        }
-        
-        guard self.imageLoader != nil else {
-            return
-        }
-        
-        self.imageLoader?.$image.sink { [weak self] img in
-            guard let self = self else { return }
-            
-            if img != nil {
-                self.productImageView.image = img
-               
-                DispatchQueue.main.async {
-                    self.imageHeightConstraint.constant = CGFloat(self.product?.image?.height ?? 100)
-                    self.imageWidthConstraint.constant = CGFloat(self.product?.image?.width ?? 100)
-                }
-              
-               
-                
-                print(("Width \(self.imageWidthConstraint.constant)"))
-                print(("Height \( self.imageHeightConstraint.constant )"))
-                self.imageLoader = nil
-            }
-            
-        }.store(in: &self.cancellable)
-            
     }
     
+    
+    func updateView(){
+        ///Product Descripton
+        self.productDescriptionLabel.text = product?.productDescription
+        
+        //Product Image
+        self.productImageView.image = self.productImg
+        self.imageHeightConstraint.constant = CGFloat(self.product?.image?.height ?? 100)
+        self.imageWidthConstraint.constant = CGFloat(self.product?.image?.width ?? 100)
+        
+        print(("Width \(self.imageWidthConstraint.constant)"))
+        print(("Height \( self.imageHeightConstraint.constant )"))
+    }
 
  
 }
