@@ -13,5 +13,8 @@ Used MVVM, As the business logic is separated from the view, MVVM allows for gre
 Ued coordinator desin pattern, to organise flow logic between view controllers.
 
 
-- Supported ios verion:
+- Supported iOS verion:
 iOS 14
+
+
+<img align="right" width="250" src="https://github.com/esraaeiid/Challenge_Thirdwayv/blob/main/Simulator%20Screen%20Recording%20-%20iPhone%2011%20-%202022-12-20%20at%2023.22.38.mp4"/>
