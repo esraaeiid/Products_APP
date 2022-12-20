@@ -45,6 +45,11 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
         super.bind()
         viewModel?.$isLoading.sink{ isLoading in
             print("...\(isLoading)...")
+            if isLoading {
+                LoadingView.show()
+            } else {
+                LoadingView.hide()
+            }
         }.store(in: &cancellable)
        
         viewModel?.stateDidUpdate.sink{ [weak self] state in
