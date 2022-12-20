@@ -30,6 +30,7 @@ class ProductsViewModel: BaseViewModel {
     @Published var products: [ProductsModel.Record] = []
     var store = ProductStore()
 
+    public private(set) var hasNext: Bool = false
     
     //MARK: Init
     init(useCase: ProductsUseCaseType) {
@@ -43,7 +44,7 @@ class ProductsViewModel: BaseViewModel {
 extension ProductsViewModel: ProductsViewModelType {
     
     func requestProducts(){
-        let viewModelUseCase = self.useCase as! ProductsUseCaseType
+        guard let viewModelUseCase = self.useCase as? ProductsUseCaseType else { return }
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
         self.isLoading = true
@@ -56,10 +57,15 @@ extension ProductsViewModel: ProductsViewModelType {
                 self.isLoading = false
                 switch result {
                 case .success(let products):
-                    let productsRows: [ProductsModel.Record] = products.records ?? []
-                    self.products = productsRows
-                    self.cacheProducts(products: productsRows)
+            
+                    self.products += products.records  ?? []
+                    print("count⏺", self.products.count)
+                    self.cacheProducts(products: self.products)
                     self.stateDidUpdateSubject.send(.show(true))
+                    
+                    let totalRecords = Constants.totalRecords // added limitation for disk memory safety
+                    self.hasNext = totalRecords == self.products.count ? false : true
+                    print("hasNext❓", self.hasNext)
                     
                 case .failure(let error):
                     self.syncCachedProducts()
@@ -96,9 +102,12 @@ extension ProductsViewModel {
     
     func cacheProducts(products: [ProductsModel.Record]){
         if products != store.products {
+            print("Hello I'm going to save! 🫡")
             ProductStore.save(fetchedProducts: products) { result in
                 if case .failure(let error) = result {
                     fatalError(error.localizedDescription)
+                } else if case .success(let count) = result {
+                    print("products at store count! 🕵🏼‍♀️", count)
                 }
             }
         }
@@ -106,7 +115,7 @@ extension ProductsViewModel {
     
     
     //MARK: fetching prodcuts
-    func fetchProducts(index: Int) -> ProductsModel.Record? {
+    func fetchProduct(index: Int) -> ProductsModel.Record? {
         if products.indices.contains(index) {
             return products[index]
         }
@@ -114,7 +123,7 @@ extension ProductsViewModel {
     }
    
     
-    func fetchProductCount() -> Int {
+    func getProductCount() -> Int {
         return products.count
     }
     

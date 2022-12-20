@@ -10,4 +10,8 @@ import Foundation
 
 struct Constants {
     static let pageSize = 20
+    static let totalRecords = 100
 }
+
+
+

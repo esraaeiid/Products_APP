@@ -72,7 +72,10 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
         
         viewModel?.$products.sink{  [weak self] products in
             guard let self = self else { return }
-            self.productsCollectionView.reloadData()
+            DispatchQueue.main.async {
+                self.productsCollectionView.reloadData()
+            }
+           
         }.store(in: &cancellable)
     }
     
@@ -98,7 +101,7 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
 extension ProductsViewController : UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.fetchProductCount() ?? 0
+        return viewModel?.getProductCount() ?? 0
     }
 
     
@@ -109,7 +112,7 @@ extension ProductsViewController : UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
-        if let product = self.viewModel?.fetchProducts(index: indexPath.row) {
+        if let product = self.viewModel?.fetchProduct(index: indexPath.row) {
             coordinator?.navigateProductDetail(product)
         }
     }
@@ -119,24 +122,34 @@ extension ProductsViewController : UICollectionViewDelegateFlowLayout, UICollect
         
         let cell = collectionView.dequeueReusableCell(withClass: ProductCell.self, for: indexPath)
     
-        if let product = self.viewModel?.fetchProducts(index: indexPath.row) {
+        if let product = self.viewModel?.fetchProduct(index: indexPath.row) {
             cell.bind(product)
         }
         return cell
   
     }
 
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.item == (viewModel?.getProductCount() ?? 0) - 1,
+            viewModel?.hasNext ?? false {
+                viewModel?.requestProducts()
+            }
+    }
     
+
+
     
 }
 
 //MARK: - PinterestLayoutDelegate
+
 extension ProductsViewController: PinterestLayoutDelegate {
+    
   func collectionView(
     _ collectionView: UICollectionView,
     heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
         
-        if let product = self.viewModel?.fetchProducts(index: indexPath.row),
+        if let product = self.viewModel?.fetchProduct(index: indexPath.row),
            let height = product.image?.height  {
             return CGFloat(height)
         }

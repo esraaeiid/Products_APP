@@ -20,6 +20,7 @@ protocol APIClientType{
 }
 
 extension APIClient {
+    // consider change this to @published variable
     func checkReachability() -> Bool {
         if Reachability.isConnectedToNetwork() {
             return true

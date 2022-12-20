@@ -8,8 +8,12 @@
 import Foundation
 import UIKit
 
+/*
+ Recources: [https://www.kodeco.com/4829472-uicollectionview-custom-layout-tutorial-pinterest]
+ */
+
 protocol PinterestLayoutDelegate: AnyObject {
-  func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
 }
 
 class PinterestLayout: UICollectionViewLayout {
@@ -41,12 +45,13 @@ class PinterestLayout: UICollectionViewLayout {
   
   override func prepare() {
     // 1
-    guard
-      cache.isEmpty == true,
-      let collectionView = collectionView
-      else {
-        return
-    }
+      cache.removeAll()
+      guard cache.isEmpty == true || cache.isEmpty == false, let collectionView = collectionView else {
+          return
+      }
+      contentHeight = 0
+ 
+      
     // 2
     let columnWidth = contentWidth / CGFloat(numberOfColumns)
     var xOffset: [CGFloat] = []
@@ -74,7 +79,9 @@ class PinterestLayout: UICollectionViewLayout {
       // 5
       let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
       attributes.frame = insetFrame
-      cache.append(attributes)
+        cache.append(attributes)
+        
+
         
       // 6
       contentHeight = max(contentHeight, frame.maxY)
