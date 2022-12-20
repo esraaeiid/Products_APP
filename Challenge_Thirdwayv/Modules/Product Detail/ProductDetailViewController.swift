@@ -14,6 +14,10 @@ class ProductDetailViewController: BaseViewController<ProductDetailViewModel> {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productDescriptionLabel: UILabel!
     
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
+    
+    
     private var imageLoader: ImageLoader?
     var product: ProductsModel.Record?
     
@@ -62,6 +66,16 @@ class ProductDetailViewController: BaseViewController<ProductDetailViewModel> {
             
             if img != nil {
                 self.productImageView.image = img
+               
+                DispatchQueue.main.async {
+                    self.imageHeightConstraint.constant = CGFloat(self.product?.image?.height ?? 100)
+                    self.imageWidthConstraint.constant = CGFloat(self.product?.image?.width ?? 100)
+                }
+              
+               
+                
+                print(("Width \(self.imageWidthConstraint.constant)"))
+                print(("Height \( self.imageHeightConstraint.constant )"))
                 self.imageLoader = nil
             }
             

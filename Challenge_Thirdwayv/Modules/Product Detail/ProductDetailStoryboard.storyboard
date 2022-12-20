@@ -21,6 +21,10 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xdQ-xS-0vm">
                                         <rect key="frame" x="55" y="0.0" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="I65-XR-vcL"/>
+                                            <constraint firstAttribute="height" constant="128" id="K9N-mO-ayK"/>
+                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5or-rJ-7JN">
                                         <rect key="frame" x="154.5" y="158" width="41.5" height="20.5"/>
@@ -40,6 +44,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageHeightConstraint" destination="K9N-mO-ayK" id="8yw-6a-6n2"/>
+                        <outlet property="imageWidthConstraint" destination="I65-XR-vcL" id="UIb-Op-GvN"/>
                         <outlet property="productDescriptionLabel" destination="5or-rJ-7JN" id="nA2-Mu-FSI"/>
                         <outlet property="productImageView" destination="xdQ-xS-0vm" id="y2m-cx-anK"/>
                     </connections>

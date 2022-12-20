@@ -21,12 +21,9 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
             productsCollectionView.showsHorizontalScrollIndicator = false
             productsCollectionView.backgroundColor = .clear
             productsCollectionView.register(nibWithCellClass: ProductCell.self)
-            let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-            flowLayout.scrollDirection = .vertical
-            flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
-            flowLayout.minimumLineSpacing = 1
-            flowLayout.minimumInteritemSpacing = 1
-            productsCollectionView.collectionViewLayout = flowLayout
+            if let layout = productsCollectionView?.collectionViewLayout as? PinterestLayout {
+                layout.delegate = self
+            }
         }
     }
     
@@ -53,6 +50,7 @@ class ProductsViewController:  BaseViewController<ProductsViewModel> {
         coordinator = nil
         
     }
+    
     
     
     override func bind() {
@@ -102,9 +100,11 @@ extension ProductsViewController : UICollectionViewDelegateFlowLayout, UICollect
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.fetchProductCount() ?? 0
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 500)
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+        return CGSize(width: itemSize, height: itemSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -128,4 +128,19 @@ extension ProductsViewController : UICollectionViewDelegateFlowLayout, UICollect
 
     
     
+}
+
+//MARK: - PinterestLayoutDelegate
+extension ProductsViewController: PinterestLayoutDelegate {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+        
+        if let product = self.viewModel?.fetchProducts(index: indexPath.row),
+           let height = product.image?.height  {
+            return CGFloat(height)
+        }
+        
+        return 200
+    }
 }

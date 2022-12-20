@@ -15,6 +15,7 @@ class ProductCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+
     private var imageLoader: ImageLoader?
     var cancellable: [AnyCancellable] = []
     
