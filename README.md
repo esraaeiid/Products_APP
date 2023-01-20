@@ -1,7 +1,7 @@
 
 # Products App
 
-Products App is a Thirdwayv Challenge that returns the data that exist in the attached JSON file and cached locally as well, 
+Products App is a project that returns the data that exist in the attached JSON file and cached locally as well, 
 and the products list can be scrolled to load more products to show more products.
 
 ## Documentation
